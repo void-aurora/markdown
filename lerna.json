@@ -1,0 +1,13 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": ["packages/*"],
+  "ignoreChanges": [],
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "message": "release: publish"
+    }
+  }
+}
