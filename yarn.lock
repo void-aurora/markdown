@@ -1437,6 +1437,19 @@
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
 
+"@types/eslint@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-6.1.8.tgz#7e868f89bc1e520323d405940e49cb912ede5bba"
+  integrity sha512-CJBhm9pYdUS8cFVbXACWlLxZWFBTQMiM0eI6RYxng3u9oQ9gHdQ5PN89DHPrK4RISRzX62nRsteUlbBgEIdSug==
+  dependencies:
+    "@types/estree" "*"
+    "@types/json-schema" "*"
+
+"@types/estree@*":
+  version "0.0.42"
+  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.42.tgz#8d0c1f480339efedb3e46070e22dd63e0430dd11"
+  integrity sha512-K1DPVvnBCPxzD+G51/cxVIoc2X8uUVl1zpJeE6iKcgHMj4+tbat5Xu4TjV7v2QSDbIeAfLi2hIk+u2+s0MlpUQ==
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -1496,7 +1509,7 @@
   resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.2.tgz#a35a1809c33a68200fb6403d1ad708363c56470a"
   integrity sha512-0CFu/g4mDSNkodVwWijdlr8jH7RoplRWNgovjFLEZeT+QEbbZXjBmCe3HwaWheAlCbHwomTwzZoSedeOycABug==
 
-"@types/json-schema@^7.0.3":
+"@types/json-schema@*", "@types/json-schema@^7.0.3":
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.4.tgz#38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339"
   integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
@@ -1557,6 +1570,16 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/prettier-package-json@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@types/prettier-package-json/-/prettier-package-json-2.1.0.tgz#519f894db58335a7e3d69592df7a7bf180d352b9"
+  integrity sha512-zclgP76us7ldohAPPLvFuFkioGiEsAjCPcc1zwxcYLVbpgV0Oe3nYa1AY/lpkBvPIBk+jistSROBQlqm2M9Ltg==
+
+"@types/prettier@^1.19.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-1.19.0.tgz#a2502fb7ce9b6626fdbfc2e2a496f472de1bdd05"
+  integrity sha512-gDE8JJEygpay7IjA/u3JiIURvwZW08f0cZSZLAzFoX/ZmeqvS0Sqv+97aKuHpNsalAMMhwPe+iAS6fQbfmbt7A==
+
 "@types/rimraf@^2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/rimraf/-/rimraf-2.0.3.tgz#0199a46af106729ba14213fda7b981278d8c84f2"
@@ -1603,7 +1626,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^2.19.0":
+"@typescript-eslint/eslint-plugin@^2.19.2":
   version "2.19.2"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.19.2.tgz#e279aaae5d5c1f2547b4cff99204e1250bc7a058"
   integrity sha512-HX2qOq2GOV04HNrmKnTpSIpHjfl7iwdXe3u/Nvt+/cpmdvzYvY0NHSiTkYN257jHnq4OM/yo+OsFgati+7LqJA==
@@ -1623,7 +1646,7 @@
     "@typescript-eslint/typescript-estree" "2.19.2"
     eslint-scope "^5.0.0"
 
-"@typescript-eslint/parser@^2.19.0":
+"@typescript-eslint/parser@^2.19.2":
   version "2.19.2"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-2.19.2.tgz#21f42c0694846367e7d6a907feb08ab2f89c0879"
   integrity sha512-8uwnYGKqX9wWHGPGdLB9sk9+12sjcdqEEYKGgbS8A0IvYX59h01o8os5qXUHMq2na8vpDRaV0suTLM7S8wraTA==
@@ -1646,43 +1669,46 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@void-aurora/commitlint-config@^0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@void-aurora/commitlint-config/-/commitlint-config-0.6.1.tgz#208445d95cae50053535564f958155b4276a683b"
-  integrity sha512-xDwaG6Dmy4vdglFQqAZIyQ5HtkrZycwW+D76Pm7d4pf0P26waZp0pn+SmpbeSA/Pp2hKyEEWE9VU4l0nCEyu4g==
-
-"@void-aurora/eslint-config@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@void-aurora/eslint-config/-/eslint-config-0.7.0.tgz#9bfd44c8ab2c42cf21ecd60cbc40b3ba9ec26eb2"
-  integrity sha512-/68Ygl2Y/jzI1hm7z6IfDLI74prYwCpoIXImRhiQcusqxwfDe1rY5ztmzc7xmzPUTb+DtIX+Q4mHuy0kgvDZFQ==
-
-"@void-aurora/prettier-config@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@void-aurora/prettier-config/-/prettier-config-0.5.1.tgz#7e280084c267230ab3376f8989bce04bcb8b2cf2"
-  integrity sha512-lG2woFGKLIDqFdwL44zLk5KSHJGxQbEQsCeS62VpPLHSpREkDXXLtacfbXlE+tIaHzif4nA+tQBtSZYjlObtdw==
-
-"@void-aurora/stylelint-config@^0.6.2":
+"@void-aurora/commitlint-config@^0.6.2":
   version "0.6.2"
-  resolved "https://registry.yarnpkg.com/@void-aurora/stylelint-config/-/stylelint-config-0.6.2.tgz#2d2145db4f78f8223e2e529317b619345637a4a4"
-  integrity sha512-OkIvkhxkunCotVYwrl6s/pDsB4A0e996wPbJKDovLh3DiswxfVXT9gdXxd6KUAz5/rJqA9732Ng6LVf6ABnYig==
+  resolved "https://registry.yarnpkg.com/@void-aurora/commitlint-config/-/commitlint-config-0.6.2.tgz#9a6348f651cc4e9eb7907bb98e8849c1e0304df6"
+  integrity sha512-hhDDl810KwNZfoORkvBsIy1dSSDOI2Q2K/4nTPMaOR+lle54n22MWCh9Xta5LVAwu9HixloZTMYZLoCfQw0JIQ==
 
-"@void-aurora/toolkit@^0.8.3":
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/@void-aurora/toolkit/-/toolkit-0.8.4.tgz#dbe95961d0cca0f7cfc32cedff9efe277e94b49b"
-  integrity sha512-qJFsYH5H6sT2mbtmR8o7fgPDDP6v0833A2R/RgUExPWpkZW/6EiSh2j7vv2MHgznmk8g3g/4PD67GySCbIVYoA==
+"@void-aurora/eslint-config@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@void-aurora/eslint-config/-/eslint-config-0.7.2.tgz#b187d9eef4a470461af73f42db4d2363168ad49c"
+  integrity sha512-lt+zWgT8+s+AxnfkvAGsKMlKON5FYybE4MI4mIAuHn60D5GpgjWzIN3nanprKOYTVEelVEMx9J9o7HjBidiLow==
+
+"@void-aurora/prettier-config@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@void-aurora/prettier-config/-/prettier-config-0.5.2.tgz#957fd9347ede14666fd373d667b3dbceaaa8e718"
+  integrity sha512-JqZtPcwyjdQlD/joY5YRZigMJBMTe2KK++b3Ji81/GeRiWHEUgrYFaZ1l6Ycb/OFzBTVEouvMPdsH4xzFcHLbw==
+
+"@void-aurora/stylelint-config@^0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@void-aurora/stylelint-config/-/stylelint-config-0.6.3.tgz#5830846bd2b5335a8752534639580816a4916d43"
+  integrity sha512-nSZ/DhjK6eAsrEHw6G3BLbVs5hs5nRElQ/VRTQuNEKPXwDHlzXalElKOac46I8fHHLzrRTwaJBqVWyK0QCtdXg==
+
+"@void-aurora/toolkit@^0.9.2":
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/@void-aurora/toolkit/-/toolkit-0.9.2.tgz#bd4395b1ebf575edc5a73c68bfa762c5b70dc88f"
+  integrity sha512-nUcJIjoTPeaCzMmsO5wSrph2jK8i+d7lvqGt2/EDUX9SNE10G6ftveMc8KqfjRlhzXZNdxDXSH3Rmk+I5iN3fA==
   dependencies:
     "@commitlint/cli" "^8.3.5"
     "@commitlint/config-lerna-scopes" "^8.3.4"
     "@commitlint/prompt-cli" "^8.3.5"
+    "@types/eslint" "^6.1.8"
     "@types/fs-extra" "^8.0.1"
     "@types/js-yaml" "3.12.2"
+    "@types/prettier" "^1.19.0"
+    "@types/prettier-package-json" "^2.1.0"
     "@types/rimraf" "^2.0.3"
-    "@typescript-eslint/eslint-plugin" "^2.19.0"
-    "@typescript-eslint/parser" "^2.19.0"
-    "@void-aurora/commitlint-config" "^0.6.1"
-    "@void-aurora/eslint-config" "^0.7.0"
-    "@void-aurora/prettier-config" "^0.5.1"
-    "@void-aurora/stylelint-config" "^0.6.2"
+    "@typescript-eslint/eslint-plugin" "^2.19.2"
+    "@typescript-eslint/parser" "^2.19.2"
+    "@void-aurora/commitlint-config" "^0.6.2"
+    "@void-aurora/eslint-config" "^0.7.2"
+    "@void-aurora/prettier-config" "^0.5.2"
+    "@void-aurora/stylelint-config" "^0.6.3"
     chalk "^3.0.0"
     confusing-browser-globals "^1.0.9"
     conventional-changelog-cli "^2.0.31"
@@ -1693,13 +1719,13 @@
     execa "^4.0.0"
     fs-extra "^8.1.0"
     globby "^11.0.0"
-    husky "^4.2.1"
+    husky "^4.2.2"
     js-yaml "3.13.1"
     lint-staged "^10.0.7"
     prettier "^1.19.1"
     prettier-package-json "^2.1.3"
-    rimraf "^3.0.1"
-    stylelint "^13.0.0"
+    rimraf "^3.0.2"
+    stylelint "^13.1.0"
     stylelint-config-prettier "^8.0.1"
     stylelint-prettier "^1.1.2"
     stylelint-scss "^3.14.2"
@@ -3223,7 +3249,7 @@ dot-prop@^3.0.0:
   dependencies:
     is-obj "^1.0.0"
 
-dot-prop@^4.1.1, dot-prop@^4.2.0:
+dot-prop@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
   integrity sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==
@@ -4379,7 +4405,7 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@^4.2.1:
+husky@^4.2.2:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/husky/-/husky-4.2.3.tgz#3b18d2ee5febe99e27f2983500202daffbc3151e"
   integrity sha512-VxTsSTRwYveKXN4SaH1/FefRJYCtx+wx04sSVcOpD7N2zjoHxa+cEJ07Qg5NmV3HAK+IRKOyNVpi2YBIVccIfQ==
@@ -7043,15 +7069,6 @@ postcss-scss@^2.0.0:
   dependencies:
     postcss "^7.0.0"
 
-postcss-selector-parser@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-3.1.1.tgz#4f875f4afb0c96573d5cf4d74011aee250a7e865"
-  integrity sha1-T4dfSvsMllc9XPTXQBGu4lCn6GU=
-  dependencies:
-    dot-prop "^4.1.1"
-    indexes-of "^1.0.1"
-    uniq "^1.0.1"
-
 postcss-selector-parser@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.0.2.tgz#934cf799d016c83411859e09dcecade01286ec5c"
@@ -7687,7 +7704,7 @@ rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.2, rimraf@^2.6.3:
   dependencies:
     glob "^7.1.3"
 
-rimraf@^3.0.0, rimraf@^3.0.1:
+rimraf@^3.0.0, rimraf@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
   integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
@@ -8338,10 +8355,10 @@ stylelint-scss@^3.14.2:
     postcss-selector-parser "^6.0.2"
     postcss-value-parser "^4.0.2"
 
-stylelint@^13.0.0:
-  version "13.1.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.1.0.tgz#693fca947873ff34c92bf08cdaa6f3db1cac91e2"
-  integrity sha512-Ei+nCSQTyZYrsLSUIxq48/QfzCQD9r9sQiBqy7Z4IpIMcj+E0R6b0CHrSFeE7jNgREpBfJKJd6DpstuDrwUiew==
+stylelint@^13.1.0:
+  version "13.2.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.2.0.tgz#b6f5b67b9a9a51f1fd105ab916952456d93826b4"
+  integrity sha512-isf31yjkm0DQesx+Yk1b/WQpFkf1MicwaAVR22Hprx9HRFGhhEkWdrVCyrkK6HFymL0rhzynG97Tu53q/WCsAg==
   dependencies:
     autoprefixer "^9.7.4"
     balanced-match "^1.0.0"
@@ -8377,7 +8394,7 @@ stylelint@^13.0.0:
     postcss-safe-parser "^4.0.1"
     postcss-sass "^0.4.2"
     postcss-scss "^2.0.0"
-    postcss-selector-parser "^3.1.0"
+    postcss-selector-parser "^6.0.2"
     postcss-syntax "^0.36.2"
     postcss-value-parser "^4.0.2"
     resolve-from "^5.0.0"
