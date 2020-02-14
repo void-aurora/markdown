@@ -23,6 +23,12 @@ describe('markdown.ts', () => {
     );
   });
 
+  test('plugin empty', () => {
+    const markdown = new Markdown();
+    markdown.use({ id: 'none' });
+    expect(markdown.getPluginIds()).toEqual(['none']);
+  });
+
   test('plugin duplicated', () => {
     const markdown = new Markdown();
     markdown.use(PluginTitle).use(PluginTitle);
