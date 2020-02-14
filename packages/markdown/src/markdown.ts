@@ -25,21 +25,34 @@ export class Markdown {
     this.it = MarkdownIt(markdownItOptions);
   }
 
+  /**
+   * Pipe function for installing a plugin
+   * @param plugin the plugin object
+   * @param options the options for plugin
+   */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public use<TConfig = any, TMeta = any>(
-    plugin: MarkdownPlugin<TConfig, TMeta>,
-    config?: TConfig,
+  public use<TOptions = any, TMeta = any>(
+    plugin: MarkdownPlugin<TOptions, TMeta>,
+    options?: TOptions,
   ): this {
     if (this.plugins.some(([p]) => p === plugin)) {
       return this;
     }
 
-    this.plugins.push([plugin, config]);
+    if (this.plugins.some(([p]) => p.id === plugin.id)) {
+      throw new Error(`Duplicated plugin ID: ${plugin.id}.`);
+    }
+
+    this.plugins.push([plugin, options]);
     if (plugin.install) {
-      plugin.install(this.it, config);
+      plugin.install(this.it, options);
     }
 
     return this;
+  }
+
+  public getPluginIds(): string[] {
+    return this.plugins.map(([p]) => p.id);
   }
 
   private get markdownItOptions(): MarkdownIt.Options {
