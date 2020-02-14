@@ -62,6 +62,9 @@ function markRecursively(
   });
 }
 
+/**
+ * Add line number to each block elements.
+ */
 const plugin: MarkdownPlugin<PluginLineNumberOptions> = {
   id: 'line-number',
 

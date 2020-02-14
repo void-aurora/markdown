@@ -16,9 +16,9 @@ const defaultOptions: Required<PluginTitleOptions> = {
 const predicateH1 = (t: Token): boolean => t.type === 'heading_open' && t.tag === 'h1';
 
 /**
- * Feature:
- * - extract the document title to meta.title
- * - remove `<h1>` for output (can be disable by `hideHeading1: false`)
+ * Features:
+ * - Extract the document title to `meta.title`.
+ * - Remove `<h1>` for output (can be disable by `hideHeading1: false`).
  */
 const plugin: MarkdownPlugin<PluginTitleOptions, string> = {
   id: 'title',

@@ -1,3 +1,3 @@
-# @void-aurora/markdown
+# Markdown
 
 Libraries related to Markdown for Void Aurora.
