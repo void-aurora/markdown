@@ -21,26 +21,31 @@ describe('plugins/title.ts', () => {
     const markdown = new Markdown().use(PluginTitle);
     const data = markdown.parse(src);
     expect(data.meta.title).toEqual(title);
-    expect(data.html.includes(title)).toEqual(false);
+    expect(data.html).not.toMatch(title);
+    expect(data.html).not.toMatch(`<h1>${title}</h1>`);
   });
 
   test('hideHeading1: true', () => {
     const markdown = new Markdown().use(PluginTitle, { hideHeading1: true });
     const data = markdown.parse(src);
     expect(data.meta.title).toEqual(title);
-    expect(data.html.includes(title)).toEqual(false);
+    expect(data.html).not.toMatch(title);
+    expect(data.html).not.toMatch(`<h1>${title}</h1>`);
   });
 
   test('hideHeading1: false', () => {
     const markdown = new Markdown().use(PluginTitle, { hideHeading1: false });
     const data = markdown.parse(src);
     expect(data.meta.title).toEqual(title);
-    expect(data.html.includes(`<h1>${title}</h1>`)).toEqual(true);
+    expect(data.html).toMatch(title);
+    expect(data.html).toMatch(`<h1>${title}</h1>`);
   });
 
   test('no title', async () => {
     const markdown = new Markdown().use(PluginTitle);
     const data = markdown.parse(await readSample('title/no-title.md'));
     expect(data.meta.title).toEqual('');
+    expect(data.html).not.toMatch('<h1');
+    expect(data.html).not.toMatch('</h1>');
   });
 });
