@@ -1,18 +1,22 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable require-unicode-regexp */
 
-export function slugify(heading: string): string {
+/**
+ * The github style heading slugify function.
+ * Converts heading content to HTML id for anchor.
+ * @param heading the heading content
+ */
+export function githubSlugify(heading: string): string {
   // from vscode/extensions/markdown-language-features/src/slugify.ts
-  return encodeURI(
-    heading
-      .trim()
-      .toLowerCase()
-      .replace(/\s+/g, '-') // Replace whitespace with -
-      .replace(
-        /[\]\[\!\'\#\$\%\&\(\)\*\+\,\.\/\:\;\<\=\>\?\@\\\^\_\{\|\}\~\`。，、；：？！…—·ˉ¨‘’“”々～‖∶＂＇｀｜〃〔〕〈〉《》「」『』．〖〗【】（）［］｛｝]/g,
-        '',
-      ) // Remove known punctuators
-      .replace(/^\-+/, '') // Remove leading -
-      .replace(/\-+$/, ''), // Remove trailing -
-  );
+  // TODO: need `encodeURI()`?
+  return heading
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace whitespace with -
+    .replace(
+      /[\]\[\!\'\#\$\%\&\(\)\*\+\,\.\/\:\;\<\=\>\?\@\\\^\_\{\|\}\~\`。，、；：？！…—·ˉ¨‘’“”々～‖∶＂＇｀｜〃〔〕〈〉《》「」『』．〖〗【】（）［］｛｝]/g,
+      '',
+    ) // Remove known punctuators
+    .replace(/^\-+/, '') // Remove leading -
+    .replace(/\-+$/, ''); // Remove trailing -
 }
