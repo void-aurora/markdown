@@ -54,9 +54,8 @@
   ],
   "jest": {
     "collectCoverage": true,
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/scripts/",
-      "<rootDir>/node_modules/"
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs,ts,tsx}"
     ],
     "coverageThreshold": {
       "global": {
