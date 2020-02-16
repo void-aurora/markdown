@@ -1,4 +1,7 @@
 {
   "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "ScriptHost", "DOM", "DOM.Iterable"]
+  },
   "include": ["build/**/*", "scripts/**/*", "__tests__/**/*", "src/**/*"]
 }
