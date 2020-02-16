@@ -9,7 +9,7 @@
     "ts": "ts-node -r tsconfig-paths/register -P ./tsconfig.scripts.json"
   },
   "dependencies": {
-    "@void-aurora/toolkit": "^0.9.2"
+    "@void-aurora/toolkit": "^0.9.3"
   },
   "devDependencies": {
     "@types/jest": "^25.1.2",
