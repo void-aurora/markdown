@@ -21,6 +21,50 @@ importers:
       ts-node: ^8.6.2
       tsconfig-paths: ^3.9.0
       typescript: ^3.8.2
+  packages/markdown:
+    dependencies:
+      '@types/linkify-it': 2.1.0
+      '@types/markdown-it': 0.0.9
+      '@types/markdown-it-anchor': 4.0.3
+      '@types/markdown-it-container': 2.0.2
+      linkify-it: 2.2.0
+      markdown-it: 10.0.0
+      markdown-it-abbr: 1.0.4
+      markdown-it-anchor: 5.2.5_markdown-it@10.0.0
+      markdown-it-container: 2.0.0
+      markdown-it-deflist: 2.0.3
+      markdown-it-emoji: 1.4.0
+      markdown-it-footnote: 3.0.2
+      markdown-it-ins: 3.0.0
+      markdown-it-mark: 3.0.0
+      markdown-it-sub: 1.0.0
+      markdown-it-sup: 1.0.0
+    specifiers:
+      '@types/linkify-it': ^2.1.0
+      '@types/markdown-it': ^0.0.9
+      '@types/markdown-it-anchor': ^4.0.3
+      '@types/markdown-it-container': ^2.0.2
+      linkify-it: ^2.2.0
+      markdown-it: ^10.0.0
+      markdown-it-abbr: ^1.0.4
+      markdown-it-anchor: ^5.2.5
+      markdown-it-container: ^2.0.0
+      markdown-it-deflist: ^2.0.3
+      markdown-it-emoji: ^1.4.0
+      markdown-it-footnote: ^3.0.2
+      markdown-it-ins: ^3.0.0
+      markdown-it-mark: ^3.0.0
+      markdown-it-sub: ^1.0.0
+      markdown-it-sup: ^1.0.0
+  packages/markdown-plugin-highlight:
+    dependencies:
+      '@types/prismjs': 1.16.0
+      '@void-aurora/markdown': 'link:../markdown'
+      prismjs: 1.19.0
+    specifiers:
+      '@types/prismjs': ^1.16.0
+      '@void-aurora/markdown': ^0.0.0
+      prismjs: ^1.19.0
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.8.3:
@@ -1496,6 +1540,28 @@ packages:
     dev: true
     resolution:
       integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
+  /@types/linkify-it/2.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-Q7DYAOi9O/+cLLhdaSvKdaumWyHbm7HAk/bFwwyTuU0arR5yyCeW5GOoqt4tJTpDRxhpx9Q8kQL6vMpuw9hDSw==
+  /@types/markdown-it-anchor/4.0.3:
+    dependencies:
+      '@types/markdown-it': 0.0.9
+    dev: false
+    resolution:
+      integrity: sha512-L0NDW75vkovFradOQiPsodVkmJhA11LTDOgkJL0bsRvDo7uMWAwJWpC3oDCBCrP4mBJurP+adKZm0FP3GoGnmw==
+  /@types/markdown-it-container/2.0.2:
+    dependencies:
+      '@types/markdown-it': 0.0.9
+    dev: false
+    resolution:
+      integrity: sha512-T770GL+zJz8Ssh1NpLiOruYhrU96yb8ovPSegLrWY5XIkJc6PVVC7kH/oQaVD0rkePpWMFJK018OgS/pwviOMw==
+  /@types/markdown-it/0.0.9:
+    dependencies:
+      '@types/linkify-it': 2.1.0
+    dev: false
+    resolution:
+      integrity: sha512-IFSepyZXbF4dgSvsk8EsgaQ/8Msv1I5eTL0BZ0X3iGO9jw6tCVtPG8HchIPm3wrkmGdqZOD42kE0zplVi1gYDA==
   /@types/minimatch/3.0.3:
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
@@ -1522,6 +1588,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-gDE8JJEygpay7IjA/u3JiIURvwZW08f0cZSZLAzFoX/ZmeqvS0Sqv+97aKuHpNsalAMMhwPe+iAS6fQbfmbt7A==
+  /@types/prismjs/1.16.0:
+    dev: false
+    resolution:
+      integrity: sha512-mEyuziLrfDCQ4juQP1k706BUU/c8OGn/ZFl69AXXY6dStHClKX4P+N8+rhqpul1vRDA2VOygzMRSJJZHyDEOfw==
   /@types/rimraf/2.0.3:
     dependencies:
       '@types/glob': 7.1.1
@@ -2470,6 +2540,15 @@ packages:
   /cli-width/2.2.0:
     resolution:
       integrity: sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
+  /clipboard/2.0.4:
+    dependencies:
+      good-listener: 1.2.2
+      select: 1.1.2
+      tiny-emitter: 2.1.0
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha512-Vw26VSLRpJfBofiVaFb/I8PVfdI1OxKcYShe6fm0sP/DtmiWQNCjhM/okTvdCo0G+lMMm1rMYbk4IK4x1X+kgQ==
   /cliui/5.0.0:
     dependencies:
       string-width: 3.1.0
@@ -3062,6 +3141,11 @@ packages:
       node: '>=0.4.0'
     resolution:
       integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
+  /delegate/3.2.0:
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
   /delegates/1.0.0:
     resolution:
       integrity: sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
@@ -4105,6 +4189,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-v0Ts/8IsSbh9n1OJRnSfa7Nlxi4AkXIsWB6vPept8FDbL4bXn3FNuxjYtO/nmBGu7GDkL9MFeGebeSu6l55EPQ==
+  /good-listener/1.2.2:
+    dependencies:
+      delegate: 3.2.0
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
   /graceful-fs/4.2.3:
     resolution:
       integrity: sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
@@ -5433,6 +5524,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
+  /linkify-it/2.2.0:
+    dependencies:
+      uc.micro: 1.0.6
+    dev: false
+    resolution:
+      integrity: sha512-GnAl/knGn+i1U/wjBz3akz2stz+HrHLsxMwHQGofCDfPvlf+gDKN58UtfmUquTY4/MXeE2x7k19KQmeoZi94Iw==
   /lint-staged/10.0.8:
     dependencies:
       chalk: 3.0.0
@@ -5765,6 +5862,61 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==
+  /markdown-it-abbr/1.0.4:
+    dev: false
+    resolution:
+      integrity: sha1-1mtTZFIcuz3Yqlna37ovtoZcj9g=
+  /markdown-it-anchor/5.2.5_markdown-it@10.0.0:
+    dependencies:
+      markdown-it: 10.0.0
+    dev: false
+    peerDependencies:
+      markdown-it: '*'
+    resolution:
+      integrity: sha512-xLIjLQmtym3QpoY9llBgApknl7pxAcN3WDRc2d3rwpl+/YvDZHPmKscGs+L6E05xf2KrCXPBvosWt7MZukwSpQ==
+  /markdown-it-container/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-ABm0P9Au7+zi8ZYKKJX7qBpARpU=
+  /markdown-it-deflist/2.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-/BNZ8ksW42bflm1qQLnRI09oqU2847Z7MVavrR0MORyKLtiUYOMpwtlAfMSZAQU9UCvaUZMpgVAqoS3vpToJxw==
+  /markdown-it-emoji/1.4.0:
+    dev: false
+    resolution:
+      integrity: sha1-m+4OmpkKljupbfaYDE/dsF37Tcw=
+  /markdown-it-footnote/3.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-JVW6fCmZWjvMdDQSbOT3nnOQtd9iAXmw7hTSh26+v42BnvXeVyGMDBm5b/EZocMed2MbCAHiTX632vY0FyGB8A==
+  /markdown-it-ins/3.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-+vyAdBuMGwmT2yMlAFJSx2VR/0QZ1onQ/Mkkmr4l9tDFOh5sVoAgRbkgbuSsk+sxJ9vaMH/IQ323ydfvQrPO/Q==
+  /markdown-it-mark/3.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-HqMWeKfMMOu4zBO0emmxsoMWmbf2cPKZY1wP6FsTbKmicFfp5y4L3KXAsNeO1rM6NTJVOrNlLKMPjWzriBGspw==
+  /markdown-it-sub/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-N1/WAm6ufdywEkl/ZBEZXqHjr+g=
+  /markdown-it-sup/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-y5yf+RpSVawI8/09YyhuFd8KH8M=
+  /markdown-it/10.0.0:
+    dependencies:
+      argparse: 1.0.10
+      entities: 2.0.0
+      linkify-it: 2.2.0
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-YWOP1j7UbDNz+TumYP1kpwnP0aEa711cJjrAQrzd0UXlbJfc5aAq0F/PZHjiioqDC1NKgvIMX+o+9Bk7yuM2dg==
   /markdown-table/1.1.3:
     dev: false
     resolution:
@@ -5779,6 +5931,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3YDMQHI5vRiS2uygEFYaqckibpJtKq5Sj2c8JioeOQBU6INpKbdWzfyLqFFnDwEcEnRFIdMsguzs5pC1Jp4Isg==
+  /mdurl/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
   /meow/3.7.0:
     dependencies:
       camelcase-keys: 2.1.0
@@ -6888,6 +7044,12 @@ packages:
       node: '>= 8.3'
     resolution:
       integrity: sha512-46zLRSGLd02Rp+Lhad9zzuNZ+swunitn8zIpfD2B4OPCRLXbM87RJT2aBLBWYOznNUML/2l/ReMyWNC80PJBUQ==
+  /prismjs/1.19.0:
+    dev: false
+    optionalDependencies:
+      clipboard: 2.0.4
+    resolution:
+      integrity: sha512-IVFtbW9mCWm9eOIaEkNyo2Vl4NnEifis2GQ7/MLRG5TQe6t+4Sj9J5QWI9i3v+SS43uZBlCAOn+zYTVYQcPXJw==
   /process-nextick-args/2.0.1:
     resolution:
       integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
@@ -7519,6 +7681,11 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-Ydydq3zC+WYDJK1+gRxRapLIED9PWeSuuS41wqyoRmzvhhh9nc+QQrVMKJYzJFULazeGhzSV0QleN2wD3boh2g==
+  /select/1.1.2:
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
   /semver-compare/1.0.0:
     dev: false
     resolution:
@@ -8291,6 +8458,11 @@ packages:
       readable-stream: 3.6.0
     resolution:
       integrity: sha512-M96dvTalPT3YbYLaKaCuwu+j06D/8Jfib0o/PxbVt6Amhv3dUAtW6rTV1jPgJSBG83I/e04Y6xkVdVhSRhi0ww==
+  /tiny-emitter/2.1.0:
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
   /tmp/0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
@@ -8506,6 +8678,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+  /uc.micro/1.0.6:
+    dev: false
+    resolution:
+      integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
   /uglify-js/3.8.0:
     dependencies:
       commander: 2.20.3
