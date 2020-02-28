@@ -2,9 +2,14 @@ name: unit-test
 
 on:
   push:
+    branches:
+      - dev
     paths-ignore:
       - '**.md'
   pull_request:
+    branches:
+      - master
+      - dev
     paths-ignore:
       - '**.md'
 
