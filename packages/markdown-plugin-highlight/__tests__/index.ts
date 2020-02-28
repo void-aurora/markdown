@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import fs from 'fs-extra';
 import { Markdown } from '@void-aurora/markdown';
-import { PluginHighlight } from './index';
+import { PluginHighlight } from '../src';
 
 const css = `
 <link href="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.css" rel="stylesheet" />
@@ -32,8 +32,26 @@ describe('Markdown Plugin Highlight', () => {
         await write(`${name}.html`, data.html);
         await write(`${name}.json`, data);
 
-        expect(typeof data.html).toEqual('string');
+        expect(data.html).toMatch(/<pre class="prism language-.+"><code>/);
+        expect(data.html).toMatch('</code></pre>');
       }),
     );
+  });
+
+  test('className and classNamePrefix', () => {
+    const src = '``` md\n# Title\n```';
+
+    let md = new Markdown().use(PluginHighlight, {
+      className: 'foobar',
+      classNamePrefix: 'fake-lang-',
+    });
+    let { html } = md.parse(src);
+    expect(html).toMatch('class="foobar fake-lang-md"');
+
+    md = new Markdown().use(PluginHighlight, {
+      className: ['foo', 'bar'],
+    });
+    ({ html } = md.parse(src));
+    expect(html).toMatch('class="foo bar language-md"');
   });
 });

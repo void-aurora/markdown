@@ -2,7 +2,7 @@
 /* eslint-disable no-param-reassign */
 import { Token, MarkdownPlugin } from '@void-aurora/markdown';
 import { render } from './prism';
-import { normalizeInfo } from './normalize';
+import { normalizeLang } from './normalize';
 
 // hljsDefineVue(hljs);
 
@@ -36,7 +36,7 @@ const defaultOptions: Required<PluginHighlightOptions> = {
   className: 'prism',
   classNamePrefix: 'language-',
   lineNumbers: false,
-  wrap: (attrs, highlightedCode) => `<pre ${attrs}><code>${highlightedCode}</code></pre>`,
+  wrap: (attrs, highlightedCode) => `<pre${attrs}><code>${highlightedCode}</code></pre>`,
 };
 
 // TODO: Compatibility to markdown-it-container
@@ -59,7 +59,7 @@ const plugin: MarkdownPlugin<PluginHighlightOptions> = {
     it.renderer.rules.fence = (tokens, index, itOptions, env, self) => {
       const { [index]: token } = tokens;
 
-      const { language, highlightLines, lineStart } = normalizeInfo(token.info ?? '');
+      const language = normalizeLang(token.info);
 
       token.attrJoin('class', className);
       token.attrJoin('class', `${classNamePrefix}${language}`);
@@ -67,8 +67,6 @@ const plugin: MarkdownPlugin<PluginHighlightOptions> = {
 
       let code = render(token.content, language, {
         lineNumbers,
-        lineStart,
-        highlightLines,
       });
       if (code === '') {
         code = it.utils.escapeHtml(token.content);

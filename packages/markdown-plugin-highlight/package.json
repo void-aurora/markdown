@@ -42,7 +42,8 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs,ts,tsx}"
+      "src/**/*.{js,jsx,mjs,ts,tsx}",
+      "!src/prism/core.ts"
     ],
     "coverageThreshold": {
       "global": {

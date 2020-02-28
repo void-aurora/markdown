@@ -5,25 +5,27 @@ import { Prism } from './core';
  */
 const BLACKLIST = ['extend', 'insertBefore', 'DFS'];
 
-// TODO: lineNumbers, highlightLines
-export function render(
-  src: string,
-  language: string,
-  options: {
-    lineNumbers?: boolean;
-    lineStart?: number;
-    highlightLines?: number[];
-  } = {},
-): string {
-  const { lineNumbers = false, lineStart = 1, highlightLines = [] } = options;
+export interface RenderOptions {
+  /**
+   * Add line numbers to the highlight html.
+   */
+  lineNumbers?: boolean;
+}
 
-  if (BLACKLIST.includes(language)) {
+// TODO: lineNumbers, highlightLines
+/**
+ * Render the source code to highlight html.
+ * If non-supported language, return empty string.
+ * @param src the source code text
+ * @param language the language name
+ * @param options options
+ */
+export function render(src: string, language: string, options: RenderOptions = {}): string {
+  const { lineNumbers = false } = options;
+
+  if (BLACKLIST.includes(language) || !(language in Prism.languages)) {
     return '';
   }
 
-  if (language in Prism.languages) {
-    return Prism.highlight(src, Prism.languages[language], language);
-  }
-
-  return '';
+  return Prism.highlight(src, Prism.languages[language], language);
 }
